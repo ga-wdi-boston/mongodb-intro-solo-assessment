@@ -128,10 +128,8 @@ db.houses.update({
 // House Stark.
 
 // your code begins here
-db.houses.update({
-	$unset: {
-		name: "House Stark"
-	}
+db.houses.remove({
+	name: "House Stark"
 });
 // your code ends here
 
