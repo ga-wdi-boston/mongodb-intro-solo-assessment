@@ -53,13 +53,61 @@ db.houses.update({
     }
 });
 
+// db.houses.update({
+//     name: "House Stark"
+// }, {
+//     $push: { people: {
+//         name1: 'Ned Stark',
+//         name2: 'Arya Stark',
+//         name3: 'Sansa Stark'
+//       }
+//     }
+// });
+
 db.houses.update({
     name: "House Stark"
 }, {
     $push: { people: {
-        name1: 'Ned Stark',
-        name2: 'Arya Stark',
-        name3: 'Sansa Stark'
+        person: 'Ned Stark'
+      }
+    }
+});
+
+db.houses.update({
+    name: "House Stark"
+}, {
+    $push: { people: {
+        person: 'Arya Stark'
+      }
+    }
+});
+
+db.houses.update({
+    name: "House Stark"
+}, {
+    $push: { people: {
+        person: 'Sansa Stark'
+      }
+    }
+});
+
+
+// db.houses.update({
+//     name: "House Targaryen"
+// }, {
+//     $push: { people: {
+//         name1: 'Viserys Targaryen',
+//         name2: 'Daenerys Targaryen'
+//       }
+//     }
+// });
+
+
+db.houses.update({
+    name: "House Targaryen"
+}, {
+    $push: { people: {
+        person: 'Viserys Targaryen'
       }
     }
 });
@@ -68,12 +116,10 @@ db.houses.update({
     name: "House Targaryen"
 }, {
     $push: { people: {
-        name1: 'Viserys Targaryen',
-        name2: 'Daenerys Targaryen'
+        person: 'Daenerys Targaryen'
       }
     }
 });
-
 
 // your code ends here
 
@@ -94,7 +140,7 @@ db.houses.update({
 // You are George R. R. Martin!  Delete, without mercy,
 // House Stark.
 
-db.houses.remove({ name: "House Stark"});
+//db.houses.remove({ name: "House Stark"});
 
 // your code ends here
 
