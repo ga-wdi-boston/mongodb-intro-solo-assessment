@@ -17,4 +17,3 @@ Test your work by running `mongo assessment.js`.
 Commit and push your changes.
 
 Submit a pull request.
-
