@@ -84,7 +84,7 @@ db.houses.update({"house": "Arryn"},{$push: { people: [
 // House Arryn is not honorable!  Delete their motto.
 
 // your code begins here
-db.houses.remove({"motto": "As HIgh as Honor"});
+db.houses.update({"house": "Arryn"}, { $unset: {motto: ""}});
 // your code ends here
 
 
