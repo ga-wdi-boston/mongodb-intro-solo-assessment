@@ -76,3 +76,4 @@ db.houses.drop({"_id" : ObjectId("564dd92a7b0883f0e902c7f7")}
 
 //Do not change anything after this line
 db.houses.find().forEach(printjson);
+
