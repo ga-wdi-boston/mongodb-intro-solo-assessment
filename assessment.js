@@ -15,7 +15,20 @@ db.dropDatabase();
 // House Targaryen, motto 'Fire and Blood'
 
 // your code begins here
-
+db.houses.insert([
+  {
+    house_name: 'Arryn',
+    motto: 'As High as Honor',
+  },
+  {
+    house_name: 'Stark'
+    motto: 'Winter is Coming'
+  },
+  {
+    house_name: 'Targaryen'
+    motto: 'Fire and Blood'
+  }
+]);
 // your code ends here
 
 
@@ -32,7 +45,9 @@ db.dropDatabase();
 // Jon Arryn
 
 // your code begins here
-
+db.houses.update({"house_name" : house_name("Stark")}, { $push : { person: { given_name: 'Ned', surname: 'Stark' }, { given_name: 'Arya', surname: 'Stark' }, { given_name: 'Sansa', surname: 'Stark' }}});
+db.houses.update({"house_name" : house_name("Targaryen")}, { $push : { person: { given_name: 'Viserys', surname: 'Targaryen' }, { given_name: 'Daenerys', surname: 'Targaryen' }}});
+db.houses.update({"house_name" : house_name("Arryn")}, { $push : { person: { given_name: 'Jon', surname: 'Arryn' }}});
 // your code ends here
 
 
