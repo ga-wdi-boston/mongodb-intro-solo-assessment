@@ -15,6 +15,21 @@ db.dropDatabase();
 // House Targaryen, motto 'Fire and Blood'
 
 // your code begins here
+db.houses.insert([
+  {
+    name: "House Arryn",
+    motto: "As High as Honor"
+  },
+  {
+    name: "House Stark",
+    motto: "Winter is Coming"
+  },
+  {
+    name: "House Targaryen"
+    motto: "Fire and Blood"
+  }
+
+  ]);
 
 // your code ends here
 
@@ -32,6 +47,11 @@ db.dropDatabase();
 // Jon Arryn
 
 // your code begins here
+db.houses.update({"name": "House Stark"}, {$push: {people: [{name: "Ned Stark", description: "dead"}, {name: "Anya Stark", description: "The fourth book was terrible without her. Or was that the third book?"}, {name: "Sansa Stark", description: "Why does this character exist?"}]}})
+
+db.houses.update({"name": "House Targaryen"}, {$push: {people: [{name: "Viserys Targaryen"}, {name: "Daenerys Targaryen", description: "Tougher than you are."}]}})
+
+db.houses.update({"name": "House Arryn"}, {$push: {people: {name: "Jon Arryn"}}})
 
 // your code ends here
 
@@ -42,6 +62,7 @@ db.dropDatabase();
 
 // your code begins here
 
+db.houses.update({"name": "House Arryn"}, {$unset: {motto: ""}})
 // your code ends here
 
 
@@ -49,8 +70,9 @@ db.dropDatabase();
 //
 // You are George R. R. Martin!  Delete, without mercy,
 // House Stark.
-
+//Then forget that you were writing a series. FOR SIX YEARS.
 // your code begins here
+db.houses.remove( { name: "House Stark" }, 1 )
 
 // your code ends here
 
