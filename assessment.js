@@ -16,6 +16,19 @@ db.dropDatabase();
 
 // your code begins here
 
+db.houses.insert({
+        "name": "House Arryn",
+        "motto": "As High as Honor"
+    },
+    {
+        "name": "Stark",
+        "motto": "Winter is coming"
+    }, {
+        "name": "Targaryen",
+        "motto": "Fire and Blood"
+    }
+);
+
 // your code ends here
 
 
@@ -32,8 +45,17 @@ db.dropDatabase();
 // Jon Arryn
 
 // your code begins here
+//not finished it looks like giberish.
+update.push
+({
+  "name" : "Stark"
+
+},
+"name" : "Ned Stark"
+);
 
 // your code ends here
+
 
 
 // Question 3
@@ -41,7 +63,8 @@ db.dropDatabase();
 // House Arryn is not honorable!  Delete their motto.
 
 // your code begins here
-
+//something similar to this but do not have enough time.
+db.restaurants.remove( { "borough": "Manhattan" } )
 // your code ends here
 
 
