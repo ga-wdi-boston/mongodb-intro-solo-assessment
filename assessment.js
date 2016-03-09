@@ -51,12 +51,12 @@ motto: "Fire and Blood"
 // Jon Arryn
 
 // your code begins here
-db.houses.update({name: "Stark"}, {{$push: members: "Ned Stark"}});
-db.houses.update({name: "Stark"}, {{$push: members: "Arya Stark"}});
-db.houses.update({name: "Stark"}, {{$push: members: "Sansa Stark"}});
-db.houses.update({name: "Targaryen"}, {{$push: members: "Viserys Targaryen"}});
-db.houses.update({name: "Targaryen"}, {{$push: members: "Daenerys Targaryen"}});
-db.houses.update({name: "Arryn"}, {{$push: members: "Jon Arryn"}});
+db.houses.update({name: "Stark"}, {$push: { members: "Ned Stark"}});
+db.houses.update({name: "Stark"}, {$push: { members: "Arya Stark"}});
+db.houses.update({name: "Stark"}, {$push: { members: "Sansa Stark"}});
+db.houses.update({name: "Targaryen"}, {$push: { members: "Viserys Targaryen"}});
+db.houses.update({name: "Targaryen"}, {$push: { members: "Daenerys Targaryen"}});
+db.houses.update({name: "Arryn"}, {$push: { members: "Jon Arryn"}});
 // your code ends here
 
 
