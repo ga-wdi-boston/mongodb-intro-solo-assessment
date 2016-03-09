@@ -15,7 +15,7 @@ db.dropDatabase();
 // House Targaryen, motto 'Fire and Blood'
 
 // your code begins here
-use: houses;
+db.createCollection("houses")
 
 db.houses.insert(
   {
