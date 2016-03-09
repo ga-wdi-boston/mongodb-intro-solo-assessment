@@ -48,13 +48,8 @@ db.houses.insert([{
 
 db.houses.update(
     { House: "Stark" },
-    { $set: { "members": "Ned Stark", "Arya Stark" } }
+    { $push: { "members": "Ned Stark", "Arya Stark", "Sansa Stark" } }
 );
-
-db.houses.update(
-  { House: "Stark" },
-  { $push: { members: "Sansa Stark" }}
-)
 
 // your code ends here
 
