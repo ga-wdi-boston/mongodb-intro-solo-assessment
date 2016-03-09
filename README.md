@@ -38,3 +38,8 @@ and [pull requests](https://github.com/ga-wdi-boston/meta/wiki/PullRequest).
 You may use **any resource** other than each other to complete this diagnostic.
 This includes referencing talk materials, appropriate documentation, and
 searching for help online.
+
+## [License](LICENSE)
+
+Source code distributed under the MIT license. Text and other assets copyright
+General Assembly, Inc., all rights reserved.
