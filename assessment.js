@@ -21,8 +21,8 @@ db.dropDatabase();
 
 // Question 2
 //
-// Using update and $push, add the following people to the
-// respective houses
+// Using update at least once and $push at least once, add the following people
+// to the respective houses in a "members" array
 //
 // Ned Stark
 // Arya Stark
