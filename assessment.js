@@ -15,7 +15,10 @@ db.dropDatabase();
 // House Targaryen, motto 'Fire and Blood'
 
 // your code begins here
-
+db.createCollection('houses');
+db.houses.insert(name: 'House Arryn', motto: 'As High As Honor');
+db.houses.insert(name: 'House Stark', motto: 'Winter is Coming');
+db.houses.insert(name: 'House Targaryen', motto: 'Fire and Blood');
 // your code ends here
 
 
@@ -32,6 +35,20 @@ db.dropDatabase();
 // Jon Arryn
 
 // your code begins here
+db.houses.update(
+  {name: 'House Arryn'},
+  { $push: { members: 'Jon Arryn'}}
+)
+
+db.houses.update(
+  {name: 'House Stark'},
+  { $push: { members: 'Ned Stark', 'Arya Stark', 'Sansa Stark'}}
+)
+
+db.houses.update(
+  {name: 'House Targaryen'},
+  { $push: { members: 'Viserys Targaryen', 'Daenerys Targaryen'}}
+)
 
 // your code ends here
 
@@ -41,7 +58,10 @@ db.dropDatabase();
 // House Arryn is not honorable!  Delete their motto.
 
 // your code begins here
-
+db.houses.update(
+  {motto: 'House Arryn'},
+  { $unset: {motto: ""}}
+)
 // your code ends here
 
 
