@@ -82,7 +82,7 @@ db.houses.update({
 
 // your code begins here
 db.houses.remove({
-  motto: "As High as Honor"
+  $unset: {motto: "As High as Honor"}
 })
 // your code ends here
 
