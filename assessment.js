@@ -14,9 +14,22 @@ db.dropDatabase();
 // House Stark, motto 'Winter is Coming'
 // House Targaryen, motto 'Fire and Blood'
 
-// your code begins here
+mongoimport --db=mongo-crud --collection=houses --headerline --type=csv --file=sample/csv/houses.csv
 
-// your code ends here
+db.houses.insert ({
+name: "House Arryn",
+motto: "As High as Honor"
+})
+
+db.houses.insert ({
+name: "House Stark",
+motto: "Winter is Coming"
+})
+
+db.houses.insert ({
+name: "House Targaryen",
+motto: "Fire and Blood"
+})
 
 
 // Question 2
@@ -31,7 +44,30 @@ db.dropDatabase();
 // Daenerys Targaryen
 // Jon Arryn
 
-// your code begins here
+
+db.houses.update(
+  {name: "House Stark"},
+  {
+    $set: { members: "Ned Stark"},
+    $set: { members: "Arya Stark"},
+    $set: { members: "Sansa Stark"},
+  }
+)
+
+db.houses.update(
+  {name: "House Targaryen"},
+  {
+    $push: { members: "Viserys Targaryen"},
+    $push: { members: "Daenerys Targaryen"}
+  }
+)
+
+db.houses.update(
+  {name: "House Arryn"},
+  {
+    $set: { members: "Jon Arryn" }
+  }
+)
 
 // your code ends here
 
@@ -40,9 +76,7 @@ db.dropDatabase();
 //
 // House Arryn is not honorable!  Delete their motto.
 
-// your code begins here
-
-// your code ends here
+db.houses.remove( { motto: "As High as Honor" } )
 
 
 // Question 4
