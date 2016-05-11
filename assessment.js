@@ -15,7 +15,24 @@ db.dropDatabase();
 // House Targaryen, motto 'Fire and Blood'
 
 // your code begins here
+db.createCollection Houses {
+  house: String;
+  mott: String;
+}
 
+db.Houses.insert({
+  House: "Arryn" ,
+  motto: "Winter is Coming",
+});
+
+db.Houses.insert({
+  House: "Stark" ,
+  motto: "As High as Honor",
+});
+db.Houses.insert({
+  House: "Targaryen" ,
+  motto: "Fire and Blood",
+});
 // your code ends here
 
 
@@ -41,7 +58,7 @@ db.dropDatabase();
 // House Arryn is not honorable!  Delete their motto.
 
 // your code begins here
-
+db.houses.find({house: "Arryn"}).remove({mott:});
 // your code ends here
 
 
@@ -51,7 +68,10 @@ db.dropDatabase();
 // House Stark.
 
 // your code begins here
+db.houses.remove(
+ {house: Stark }
 
+);
 // your code ends here
 
 
