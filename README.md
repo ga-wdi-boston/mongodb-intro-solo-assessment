@@ -6,12 +6,10 @@
 
 -   [MongoDB](https://github.com/ga-wdi-boston/mongodb-crud)
 
-
 ## Instructions
 
 1.  Fork and clone this repository.
 1.  Change into the new directory.
-1.  Install dependencies.
 1.  Create and checkout a new branch, named `response`.
 1.  Follow the directions given in [assessment.js](assessment.js).
 1.  Test your work by running `mongo assessment.js`.
