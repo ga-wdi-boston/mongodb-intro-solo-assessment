@@ -14,9 +14,20 @@ db.dropDatabase();
 // House Stark, motto 'Winter is Coming'
 // House Targaryen, motto 'Fire and Blood'
 
-// your code begins here
-
-// your code ends here
+db.houses.insert(
+  {
+    name: "House Arryn",
+    motto: "As High as Honor"
+  },
+  {
+    name: "House Stark",
+    motto: "Winter is Coming"
+  },
+  {
+    name: "House Targaryen",
+    motto: "Fire and Blood"
+  }
+);
 
 
 // Question 2
@@ -31,18 +42,41 @@ db.dropDatabase();
 // Daenerys Targaryen
 // Jon Arryn
 
-// your code begins here
+db.houses.update(
+  {
+    $set: {
+      members: []
+    }
+  },
+  { multi: true}
+);
 
-// your code ends here
+db.houses.update(
+  {
+    { name: "House Stark" },
+    { $push: { members: { $each: ["Ned Stark", "Arya Stark", "Sansa Stark"]}}}
+  }
+);
 
+db.houses.update(
+  {
+    { name: "House Targaryen"},
+    { $push: { members: { $each: ["Viserys Targaryen", "Daenerys Targaryen"]}}}
+  }
+);
+
+db.houses.update(
+  { name: "House Arryn"},
+  { $set: { members: ["Jon Arryn"]}}
+);
 
 // Question 3
 //
 // House Arryn is not honorable!  Delete their motto.
 
-// your code begins here
-
-// your code ends here
+db.houses.update(
+  { name: "House Arryn"},
+  { motto: ""});
 
 
 // Question 4
@@ -50,9 +84,7 @@ db.dropDatabase();
 // You are George R. R. Martin!  Delete, without mercy,
 // House Stark.
 
-// your code begins here
-
-// your code ends here
+db.houses.remove({ name: "House Stark"});
 
 
 //Do not change anything after this line
