@@ -54,8 +54,11 @@ db.houses.update(
   { multi: true }
 )
 db.houses.update({name: 'Arryn'}, {$push: {members: "Jon Arryn"}})
-db.houses.update({name: 'Stark'}, {$push: { each: {members: "Ned Stark", "Arya Stark", "Sansa Stark"}}})
-db.houses.update({name: 'Targaryen'}, {$push: { each: {members: "Viserys Targaryen", "Daenerys Targaryen"}}})
+db.houses.update({name: 'Stark'}, {$push: {members: "Ned Stark"}})
+db.houses.update({name: 'Stark'}, {$push: {members: "Arya Stark"}})
+db.houses.update({name: 'Stark'}, {$push: {members: "Sansa Stark"}})
+db.houses.update({name: 'Targaryen'}, {$push: {members: "Viserys Targaryen"}})
+db.houses.update({name: 'Targaryen'}, {$push: {members: "Daenerys Targaryen"}})
 
 // your code ends here
 
@@ -65,7 +68,7 @@ db.houses.update({name: 'Targaryen'}, {$push: { each: {members: "Viserys Targary
 // House Arryn is not honorable!  Delete their motto.
 
 // your code begins here
-db.houses.update({name: 'Arryn'}, {motto: ""})
+db.houses.update({name: 'Arryn'}, {$unset: {motto: ""}})
 // your code ends here
 
 // Question 4
@@ -74,7 +77,7 @@ db.houses.update({name: 'Arryn'}, {motto: ""})
 // House Stark.
 
 // your code begins here
-db.houses.destroy({name: 'Stark'})
+db.houses.remove({name: 'Stark'})
 // your code ends here
 
 
