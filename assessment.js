@@ -13,8 +13,33 @@ db.dropDatabase();
 // House Arryn, motto 'As High as Honor'
 // House Stark, motto 'Winter is Coming'
 // House Targaryen, motto 'Fire and Blood'
+const houseSchema = new mongoose.Schema({
+  houses: {
+    name: {
+      type: String,
+      required: true
+    },
+    motto: {
+      type: String,
+      required: true
+    }
+  }
+});
 
-// your code begins here
+db.houseSchema.insert([
+  {
+    name: 'House Arryn'
+    motto: 'As High as Honor'
+  },
+  {
+    name: 'House Stark'
+    motto: 'Winter is Coming'
+  },
+  {
+    name: 'House Targaryen'
+    motto: 'Fire and Blood'
+  }
+]);
 
 // your code ends here
 
@@ -31,7 +56,21 @@ db.dropDatabase();
 // Daenerys Targaryen
 // Jon Arryn
 
-// your code begins here
+db.houses.update({name:"House Stark"}, {$push: {members:
+   {
+     firstname: "Ned", lastname: "Stark",
+     firstname: "Arya", lastname: "Stark",
+     firstname: "Sansa", lastname: "Stark" }
+   }
+ {name: "House Targaryen"}
+{
+  firstname: "Viserys", lastname:"Targaryen",
+  firstname: "Daenerys", lastname: "Targaryen"}
+  {name: "House Arryn"}
+  {
+    firstname: "Jon", lastname: "Arryn"
+  }
+}});
 
 // your code ends here
 
@@ -40,7 +79,7 @@ db.dropDatabase();
 //
 // House Arryn is not honorable!  Delete their motto.
 
-// your code begins here
+db.houses.remove({motto: "As High As Honor"})
 
 // your code ends here
 
@@ -50,7 +89,7 @@ db.dropDatabase();
 // You are George R. R. Martin!  Delete, without mercy,
 // House Stark.
 
-// your code begins here
+db.houses.remove({name:"House Stark"})
 
 // your code ends here
 
