@@ -15,6 +15,16 @@ db.dropDatabase();
 // House Targaryen, motto 'Fire and Blood'
 
 // your code begins here
+// in terminal
+// mongo
+// create houses
+// use houses
+
+db.houses.insert([
+  {name: 'Arryn', motto: 'As High as Honor'},
+  {name:'Stark', motto: 'Winter is Coming'},
+  {name: 'Targaryen', motto: 'Fire and Blood'}
+])
 
 // your code ends here
 
@@ -33,6 +43,22 @@ db.dropDatabase();
 
 // your code begins here
 
+db.house.update(
+  {name:' Stark'},
+   {
+     $push: { members : ['Ned Stark', 'Arya Stark', 'Sansa Stark' ]
+   }
+ },
+ {name: 'Targaryen'},
+  {
+    $push: { members : ['Viserys Targaryen', 'Daenerys Targaryen']
+    }
+  },
+  {name: 'Arryn'},
+  {
+    $push: { members : ['Jon Arryn']}
+  }
+)
 // your code ends here
 
 
@@ -42,6 +68,11 @@ db.dropDatabase();
 
 // your code begins here
 
+
+db.houses.update(
+   { name : 'Arryn' },
+   { $unset: { motto: "" } }
+)
 // your code ends here
 
 
@@ -52,6 +83,7 @@ db.dropDatabase();
 
 // your code begins here
 
+db.houses.remove({name: 'Stark'})
 // your code ends here
 
 
