@@ -30,7 +30,7 @@ db.houses.insert([
     motto: 'Fire and Blood'
   }
 ]
-)
+);
 // your code ends here
 
 
@@ -53,21 +53,21 @@ db.houses.update(
   {$set:{
     "people": [ 'Ned Stark', 'Arya Stark']
   }}
-)
+);
 
 db.houses.update(
   {"name":"Targaryen"},
   {$set:{
     "people": [ 'Viserys Targaryen', 'Daenerys Targaryen']
   }}
-)
+);
 
 db.houses.update(
   {"name":"Arryn"},
   {$push:{
-    "people": [ 'Jon Arryn']
+    "people": 'Jon Arryn'
   }}
-)
+);
 
 // your code ends here
 
@@ -83,7 +83,7 @@ db.houses.update(
   {$unset:{
     "motto":""
   }}
-)
+);
 
 // your code ends here
 
@@ -95,7 +95,7 @@ db.houses.update(
 
 // your code begins here
 
-db.houses.remove({"name":"Stark"})
+db.houses.remove({"name":"Stark"});
 // your code ends here
 
 
