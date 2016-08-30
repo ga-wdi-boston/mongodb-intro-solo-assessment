@@ -15,6 +15,20 @@ db.dropDatabase();
 // House Targaryen, motto 'Fire and Blood'
 
 // your code begins here
+db.houses.insert(
+  {
+  name: "House Arryn",
+  motto: "As High as Honor"
+  },
+  {
+  name: "House Stark",
+  motto: "Winter is Coming"
+  },
+  {
+  name: "House Targaryen",
+  motto: "Fire and Blood"
+  }
+);
 
 // your code ends here
 
@@ -41,7 +55,9 @@ db.dropDatabase();
 // House Arryn is not honorable!  Delete their motto.
 
 // your code begins here
-
+db.houses.remove(
+  {}
+)
 // your code ends here
 
 
