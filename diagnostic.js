@@ -6,7 +6,6 @@ var db = new Mongo().getDB('westeros');
 db.dropDatabase();
 
 // Question 1
-//
 // Create a collection called houses, and insert the following houses,
 // with name and motto fields:
 //
@@ -15,6 +14,22 @@ db.dropDatabase();
 // House Targaryen, motto 'Fire and Blood'
 
 // your code begins here
+show houses;
+
+db.houses.insert({
+  name: "House Arryn",
+  motto: "As High as Honor"
+});
+
+db.houses.insert({
+  name: "House Stark",
+  motto: "Winter is Coming"
+});
+
+db.houses.insert({
+  name: "Targaryen",
+  motto: "Fire and Blood"
+});
 
 // your code ends here
 
@@ -32,6 +47,14 @@ db.dropDatabase();
 // Jon Arryn
 
 // your code begins here
+db.houses.update(
+  {$push: { "members": ["Ned Stark", "Arya Stark", "Sansa Stark", "Viserys Targaryen",
+  "Daenerys Targaryen", "Jon Arryn"]}},
+  {
+    multi: true
+  }
+);
+
 
 // your code ends here
 
@@ -41,6 +64,12 @@ db.dropDatabase();
 // House Arryn is not honorable!  Delete their motto.
 
 // your code begins here
+db.runCommand(
+   {
+      delete: "houses",
+      deletes: [ { q: { motto: "As High as Honor" }, limit: 1 } ]
+   }
+)
 
 // your code ends here
 
@@ -51,6 +80,12 @@ db.dropDatabase();
 // House Stark.
 
 // your code begins here
+db.runCommand(
+   {
+      delete: "houses",
+      deletes: [ { q: { name: "House Stark" }, limit: 1 } ]
+   }
+)
 
 // your code ends here
 
