@@ -15,7 +15,13 @@ db.dropDatabase();
 // House Targaryen, motto 'Fire and Blood'
 
 // your code begins here
-
+db.houses.insert(
+  [
+  {"house_name" : "House Arryn", "house_motto" : "As High as Honor"},
+  {"house_name" : "House Stark", "house_motto" : "Winter is Coming"},
+  {"house_name" : "House Targaryen", "house_motto" : "Fire and Blood"}
+]
+)
 // your code ends here
 
 
@@ -32,7 +38,16 @@ db.dropDatabase();
 // Jon Arryn
 
 // your code begins here
-
+db.houses.update(
+   { "house_id" : "57fe38e2815479b1d19d2046" },
+   {
+     "house_members" : {
+              "name" : "Ned Stark",
+              "name" : "Arya Stark",
+              "name" : "Sansa Stark"
+     }
+   }
+)
 // your code ends here
 
 
