@@ -15,6 +15,20 @@ db.dropDatabase();
 // House Targaryen, motto 'Fire and Blood'
 
 // your code begins here
+db.houses.insert(
+  {
+    house: "House Arryn",
+    motto: "As High as Honor"
+  },
+  {
+    house: "House Stark",
+    motto: "Winter is Coming"
+  },
+  {
+    house: "Targaryen",
+    motto: "Fire and Blood"
+  }
+);
 
 // your code ends here
 
@@ -33,6 +47,26 @@ db.dropDatabase();
 
 // your code begins here
 
+db.houses.update(
+  {house: "House Stark"},
+  {
+    // $set: { members: [] },
+    $push: { members: { $each: ["Ned Stark", "Arya Stark", "Sansa Stark"]} }
+  },
+  {house: "House Arryn"},
+  {
+    // $set: { members: [] },
+    $push: { members: "Jon Arryn" }
+  },
+  {house: "House Targaryen"},
+  {
+    // $set: { members: [] },
+    $push: { members: { $each: ["Viserys Targaryen", "Daenerys Targaryen"]} }
+  }
+);
+
+// Why is my linter pissed???
+
 // your code ends here
 
 
@@ -42,6 +76,12 @@ db.dropDatabase();
 
 // your code begins here
 
+db.houses.update(
+  {house: "House Arryn"},
+  {
+    $set: { motto: '' },
+  }
+);
 // your code ends here
 
 
@@ -51,7 +91,10 @@ db.dropDatabase();
 // House Stark.
 
 // your code begins here
-
+db.houses.remove(
+  {house: 'House Stark'},
+  {justOne: true}
+);
 // your code ends here
 
 
