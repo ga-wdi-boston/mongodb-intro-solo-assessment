@@ -14,7 +14,18 @@ db.dropDatabase();
 // House Stark, motto 'Winter is Coming'
 // House Targaryen, motto 'Fire and Blood'
 
-// your code begins here
+db.houses.insert({
+  name: "House Arryn",
+  motto: "As High as Honor"
+},
+{
+name: "House Stark",
+motto: "Winter is Coming"
+},
+{
+  name: "House Targaryen",
+  motto: "Fire and Blood"
+})
 
 // your code ends here
 
@@ -33,6 +44,13 @@ db.dropDatabase();
 
 // your code begins here
 
+db.houses.update(
+  {name: "House Stark"},
+  {
+    $push: { members: "Ned Stark", "Arya Stark", "Sansa Stark" }
+  }
+)
+
 // your code ends here
 
 
@@ -41,6 +59,11 @@ db.dropDatabase();
 // House Arryn is not honorable!  Delete their motto.
 
 // your code begins here
+
+db.houses.remove(
+  {motto: "As High as Honor"},
+  {justOne: true}
+)
 
 // your code ends here
 
@@ -51,9 +74,15 @@ db.dropDatabase();
 // House Stark.
 
 // your code begins here
-
+db.houses.remove(
+  {house: "House Stark"}
+)
 // your code ends here
 
+comfort: 4
+clarity: 4
+
+sources: my notes and mongodb documentation
 
 //Do not change anything after this line
 db.houses.find().forEach(printjson);
