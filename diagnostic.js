@@ -15,7 +15,24 @@ db.dropDatabase();
 // House Targaryen, motto 'Fire and Blood'
 
 // your code begins here
+db.createCollection(houses);
+db.houses.insert([
+    {
+      name: 'Arryn',
+      motto: 'As High as Honor'
+    },
 
+    {
+      name: 'Stark',
+      motto: 'Winter is Coming'
+    },
+
+    {
+      name: 'Targaryen',
+      motto: 'Fire and Blood'
+    }
+
+  ]);
 // your code ends here
 
 
@@ -32,6 +49,20 @@ db.dropDatabase();
 // Jon Arryn
 
 // your code begins here
+
+db.houses.save(
+   {
+      "_id" : ObjectId(/*The Object id of Stark House*/), name: 'Arryn',
+      motto: 'As High as Honor', members: ['Jon Arryn']
+   }
+)
+db.houses.save(
+   {
+      "_id" : ObjectId(/*The Object id of the */), name: 'Stark',
+            motto: 'Winter is Coming', members: ['Viserys Targaryen', 'Daenerys Targaryen'],
+   }
+)
+
 
 // your code ends here
 
