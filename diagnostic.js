@@ -16,6 +16,21 @@ db.dropDatabase();
 
 // your code begins here
 
+db.createCollection('houses');
+db.houses.insert(
+  {
+    House: 'Arryn',
+    motto: 'As High as Honor'
+  },
+  {
+    House: 'Stark',
+    motto: 'Winter is Coming'
+  },
+    House: 'Targaryen',
+    motto: 'Fire and Blood'
+  }
+);
+
 // your code ends here
 
 
@@ -32,7 +47,18 @@ db.dropDatabase();
 // Jon Arryn
 
 // your code begins here
-
+db.houses.update(
+  { House: 'Stark', motto: 'Winter is Coming'},
+  { $push: { 'members': {'Ned Stark', 'Arya Stark', 'Sansa Stark'} } }
+);
+db.houses.update(
+  { House: 'Targaryen', motto: 'Fire and Blood'},
+  { $push: { 'members': {'Viserys Targaryen', 'Daenerys Targaryen'} } }
+);
+db.houses.update(
+  { House: 'Arryn', motto: 'As High as Honor'},
+  { $push: { 'members': {'Jon Arryn'} } }
+);
 // your code ends here
 
 
