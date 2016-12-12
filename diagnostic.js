@@ -15,8 +15,9 @@ db.dropDatabase();
 // House Targaryen, motto 'Fire and Blood'
 
 // your code begins here
-
-// your code ends here
+db.collection.houses("House Arryn, motto 'As High as Honor", "House Stark, motto 'Winter is Coming'",
+    "House Targaryen, motto 'Fire and Blood'")
+  // your code ends here
 
 
 // Question 2
@@ -32,17 +33,17 @@ db.dropDatabase();
 // Jon Arryn
 
 // your code begins here
+db.members.updateMany(Ned Stark, Arya Stark, Sansa Stark),
+  // your code ends here
 
-// your code ends here
 
+  // Question 3
+  //
+  // House Arryn is not honorable!  Delete their motto.
 
-// Question 3
-//
-// House Arryn is not honorable!  Delete their motto.
-
-// your code begins here
-
-// your code ends here
+  // your code begins here
+  db.collection.deleteOne('Fire and Blood')
+  // your code ends here
 
 
 // Question 4
@@ -51,8 +52,8 @@ db.dropDatabase();
 // House Stark.
 
 // your code begins here
-
-// your code ends here
+db.collection.deleteMany(Stark)
+  // your code ends here
 
 
 //Do not change anything after this line
