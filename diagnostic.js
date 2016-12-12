@@ -15,7 +15,22 @@ db.dropDatabase();
 // House Targaryen, motto 'Fire and Blood'
 
 // your code begins here
+db.createCollection("houses")
 
+db.houses.insert({
+   House: 'Arryn',
+   Motto: 'As High as Honor'
+})
+
+db.houses.insert({
+   House: 'Stark',
+   Motto: 'Winter is Coming'
+})
+
+db.houses.insert({
+   House: 'Targaryen',
+   Motto: 'Fire and Blood'
+})
 // your code ends here
 
 
@@ -32,7 +47,35 @@ db.dropDatabase();
 // Jon Arryn
 
 // your code begins here
+db.houses.update(
+   { House: 'Stark' },
+   {
+     members: ['Ned Stark', 'Arya Stark', 'Sansa Stark']
+   }
+)
 
+db.students.update(
+   { _id: 5 },
+   {
+     $push: {
+       members: [ 'Sansa Stark' ],
+
+     }
+   }
+)
+
+db.houses.update(
+   { House: 'Targaryen' },
+   {
+     members: ['Viserys Targaryen', 'Daenerys Targaryen']
+   }
+)
+db.houses.update(
+   { House: 'Arryn' },
+   {
+     members: ['Jon Arryn']
+   }
+)
 // your code ends here
 
 
