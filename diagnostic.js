@@ -2,7 +2,8 @@
 
 // do not change anything between here and question 1
 
-var db = new Mongo().getDB('westeros');
+var db = new Mongo()
+  .getDB('westeros');
 db.dropDatabase();
 
 // Question 1
@@ -15,6 +16,20 @@ db.dropDatabase();
 // House Targaryen, motto 'Fire and Blood'
 
 // your code begins here
+db.createCollection('houses');
+// db.collection('houses');
+db.houses.insert([{
+    name: "Aaryn",
+    motto: 'As High as Honor'
+  }, {
+    name: "Stark",
+    motto: 'Winter is Coming'
+  },
+  {
+    name: "Targaryen",
+    motto: 'Fire and Blood'
+  },
+])
 
 // your code ends here
 
@@ -24,16 +39,35 @@ db.dropDatabase();
 // Using update at least once and $push at least once, add the following people
 // to the respective houses in a "members" array.
 //
-// Ned Stark
-// Arya Stark
-// Sansa Stark
-// Viserys Targaryen
-// Daenerys Targaryen
-// Jon Arryn
+// ["Ned Stark"
+// "Arya Stark"
+// "Sansa Stark"]
+// ["Viserys Targaryen"
+// "Daenerys Targaryen"]
+// "Jon Arryn"
 
 // your code begins here
+db.houses.update({ name: "Stark" }, {
+  $set: {
+    "members": ["Ned Stark", "Arya Stark"]
+  }
+})
+db.houses.update({ name: "Stark" }, {
+  $push: { "members": "Sansa Stark" }
+});
 
-// your code ends here
+db.houses.update({ name: "Targaryen" }, {
+  $set: {
+    "members": ["Viserys Targaryen",
+      "Daenerys Targaryen"
+    ]
+  }
+})
+db.houses.update({ name: "Aaryn" }, {
+    $set: {
+      "members": ["Jon Arryn"]
+    }
+  }) // your code ends here
 
 
 // Question 3
@@ -41,8 +75,8 @@ db.dropDatabase();
 // House Arryn is not honorable!  Delete their motto.
 
 // your code begins here
-
-// your code ends here
+db.houses.update({ name: "Aaryn" }, { $unset: { "motto": "" } })
+  // your code ends here
 
 
 // Question 4
@@ -51,9 +85,10 @@ db.dropDatabase();
 // House Stark.
 
 // your code begins here
-
-// your code ends here
+db.houses.remove({ name: "Stark" })
+  // your code ends here
 
 
 //Do not change anything after this line
-db.houses.find().forEach(printjson);
+db.houses.find()
+  .forEach(printjson);
