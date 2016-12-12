@@ -15,7 +15,11 @@ db.dropDatabase();
 // House Targaryen, motto 'Fire and Blood'
 
 // your code begins here
-
+db.houses.insert(
+  {"house": "Arryn", "motto": "As High as Honor"},
+  {"house": "Stark", "motto": "Winter is Coming"},
+  {"house": "Targaryen", "motto": "Fire and Blood"}
+)
 // your code ends here
 
 
@@ -32,7 +36,24 @@ db.dropDatabase();
 // Jon Arryn
 
 // your code begins here
-
+db.houses.update(
+  {"house": "Stark"},
+  {
+    "house" [ "Stark",
+    "members": "Ned Stark",
+    "members": "Arya Stark",
+    "members": "Sansa Stark" ]
+  },
+  {"house": "Targaryen"},
+  {
+  {"house": [
+  "members": "Viserys Targaryen",
+  "members": "Daenerys Targaryen"]
+  },
+  { $push: {
+    house: 
+  }
+)
 // your code ends here
 
 
